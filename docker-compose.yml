@@ -1,0 +1,43 @@
+
+
+services:
+  mysql_dakar:
+    image: mysql:8.0
+    container_name: mysql_dakar
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_dakar_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  mysql_thies:
+    image: mysql:8.0
+    container_name: mysql_thies
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_thies_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  mysql_stl:
+    image: mysql:8.0
+    container_name: mysql_stl
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql_stl_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  mysql_dakar_data:
+  mysql_thies_data:
+  mysql_stl_data:
