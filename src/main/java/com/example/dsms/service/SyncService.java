@@ -113,4 +113,10 @@ public class SyncService {
 
         log.info("Synchronisation complète terminée. lastSync = {}", now);
     }
+
+    public void resetLastSync() {
+        lastSync.set(LocalDateTime.of(1970, 1, 1, 0, 0));
+        syncMetaRepo.deleteAll(); // Supprime toutes les métadonnées de sync
+    }
+
 }

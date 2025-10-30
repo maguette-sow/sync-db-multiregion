@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    dakar:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:tc:mysql:8.0:///dsms_test_dakar
+      username: testuser
+      password: testpass
+    thies:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:tc:mysql:8.0:///dsms_test_thies
+      username: testuser
+      password: testpass
+    stl:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:tc:mysql:8.0:///dsms_test_stl
+      username: testuser
+      password: testpass
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop   # Nettoie après chaque test
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      mode: never
+
+# Synchronisation désactivée pendant les tests
+sync:
+  interval-ms: 9999999
+
+# Testcontainers (activé automatiquement par JUnit)
+testcontainers:
+  enabled: true

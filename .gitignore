@@ -1,0 +1,19 @@
+# Dossiers Maven et fichiers compilés
+/target/
+*.class
+
+# Logs
+*.log
+
+# IDEs
+/.idea/
+/*.iml
+/.vscode/
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires
+*.tmp
+*.bak
